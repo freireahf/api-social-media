@@ -12,6 +12,7 @@ import (
 var (
 	Connection = ""
 	APIPort    = 0
+	SecretKey  []byte
 )
 
 //LoadConfig initialize environment variables
@@ -32,4 +33,6 @@ func LoadConfig() {
 		os.Getenv("DB_PASSWORD"),
 		os.Getenv("DB_NAME"),
 	)
+
+	SecretKey = []byte(os.Getenv("SECRET_KEY"))
 }
